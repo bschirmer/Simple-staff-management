@@ -1,0 +1,28 @@
+<h1>Adnat</h1>
+<h2>Sign up</h2>
+<%= form_with scope: :user, url: users_path, local: true do |form| %>
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.label :email %><br>
+      <%= form.email_field :email %>
+    </p>
+   
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field :password %>
+    </p>
+
+    <p>
+        <%= form.label "Confirm Password" %><br>
+        <%= form.password_field :passwordConfirm %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+  <%= link_to 'Log in', login_index_path %> <br>

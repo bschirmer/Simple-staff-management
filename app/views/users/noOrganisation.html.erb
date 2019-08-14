@@ -1,0 +1,31 @@
+<p> 
+Whoa, hold up there bud.<br>
+You don''t seem to be a member of any organistations. <br>
+You can join an existing one or create your own.
+<\p>
+
+<h2>Organisations</h2>
+<% @organisations.each do |organisation| %>
+    <tr>
+      <td><%= organisation.name %></td> 
+      <%= link_to 'Edit', edit_organisation_url(organisation) %>
+      <%= link_to 'Join', joinOrganisation_path(organisationId: organisation.id, userId: @user.id) %> <br>
+    </tr>
+  <% end %>
+
+<h2>Create organistaion</h2>
+<%= form_with scope: :organisation, url: organisations_path, local: true do |form| %>
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.label "Hourly rate" %><br>
+      <%= form.text_field :hourlyRate %>
+    </p>
+      
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>

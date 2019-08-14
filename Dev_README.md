@@ -1,35 +1,16 @@
 # ruby-tanda-test
 
 # To Do
-Install Ruby
-Figure out how stuff works
-Figure out how the DB will work (hopefully pretty easy)
+- shifts page
+    - sneaky sql
+    - maybe an object?
+    - no idea
+- Session data for login/logout
 
-UI things - all HTML
-
-Home page:
-Title
-Subtitle
-Email
-Email box
-Password
-Password Box
-Remember me check box
-Login button -> Ruby function
-Sign up link
-Forgot password Link
-
-Sign up page:
-Title
-Subtitle
-Name
-Name box
-Email
-Email box
-Password (reqs)
-Password box
-password confirmation text
-pw confirmation box
-sign up button -> ruby function
-login link
+# nice to haves
+- The things on the challenge
+- Password mismatch script on UI
+    - probably js
+    - check password box, check password confirm box
+    - yay or nay
 

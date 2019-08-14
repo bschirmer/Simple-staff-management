@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'shift/index'
+  get 'shift/create'
+  get 'login/index'
+  get 'forgot', to: 'login#forgotPassword'
+  
+  resources :users
+  get 'joinOrganisation', to: 'users#joinOrganisation'
+  get 'leaveOrganisation', to: 'users#leaveOrganisation'
+
+  resources :organisations
+
+  resources :shifts
+
+  root 'login#index'
 end

@@ -1,0 +1,15 @@
+<h1> ADD TEMPLATE FOR HEADER </h1>
+<p> Add template for Logged in as... </p>
+
+<h2><%= @organisation.name %></h2>
+
+<h3>Shifts</h3>
+<table>
+  <% @shifts.each do |shift| %>   
+    <tr>
+        <td> 
+          <%= image_tag(picture.url) %>
+        </td>
+    </tr>
+  <% end %>
+</table>
