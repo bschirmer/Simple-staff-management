@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  userId: 
-  start: 2019-08-14 16:07:07
-  finish: 2019-08-14 16:07:07
-  breaklength: 
+  user_id: 1
+  start: 2019-08-17 20:40:11
+  finish: 2019-08-17 20:40:11
+  break_length: 9.99
 
 two:
-  userId: 
-  start: 2019-08-14 16:07:07
-  finish: 2019-08-14 16:07:07
-  breaklength: 
+  user_id: 1
+  start: 2019-08-17 20:40:11
+  finish: 2019-08-17 20:40:11
+  break_length: 9.99

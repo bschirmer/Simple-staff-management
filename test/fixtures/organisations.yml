@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  hourlyRate: 9.99
+  hourly_rate: MyString
 
 two:
   name: MyString
-  hourlyRate: 9.99
+  hourly_rate: MyString
