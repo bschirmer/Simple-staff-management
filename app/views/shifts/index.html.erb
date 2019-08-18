@@ -1,15 +1,79 @@
-<h1> ADD TEMPLATE FOR HEADER </h1>
-<p> Add template for Logged in as... </p>
-
 <h2><%= @organisation.name %></h2>
 
 <h3>Shifts</h3>
 <table>
-  <% @shifts.each do |shift| %>   
+  <tr>
+    <th>Employee Name</th>
+    <th>Shift Date</th> 
+    <th>Start Time</th>
+    <th>Finish Time</th>
+    <th>Break Length</th>
+    <th>Hours Worked</th>
+    <th>Shift Cost</th>
+  </tr>
+  <% @shiftsHash.each do |shift| %>   
     <tr>
         <td> 
-          <p> some test text yall </p>
+          <%= shift.employee_name %>
+        </td>
+        <td> 
+          <%= shift.shift_date %>
+        </td>
+        <td> 
+          <%= shift.start_time %>
+        </td>
+        <td> 
+          <%= shift.finish_time %>
+        </td>
+        <td> 
+          <%= shift.break_length %>
+        </td>
+       <td> 
+          <%= shift.hours_worked %>
+        </td>
+         <td> 
+          <%= shift.shift_cost %>
         </td>
     </tr>
   <% end %>
+
+  
+<%= form_with(model: @shift, local: true) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :organisation_id, :value => @organisation.id %>
+  </div>
+  <tr>
+    <td> 
+      <div class="field">
+        <%= form.label current_user.name %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= form.date_field :shift_date %>
+      </div>
+    </td>
+    <td> 
+      <div class="field">
+        <%= form.time_field :start_time %>
+      </div>
+    </td>
+    <td> 
+      <div class="field">
+        <%= form.time_field :finish_time %>
+      </div>
+    </td>
+    <td> 
+      <div class="field">
+        <%= form.text_field :break_length %>
+      </div>
+    </td>
+    <td> 
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    </td>
+  </tr>
+<% end %>
 </table>
+

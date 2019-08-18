@@ -1,0 +1,12 @@
+<div id="user_header">  
+<% if current_user %>  
+    <%= render 'users/show' %>  
+<% else %>  
+    <%= render 'login/login', user: @user %>
+<% end %>  
+</div>  
+<% flash.each do |key, value| %>  
+    <%= content_tag(:div, class: "alert alert-#{key}") do %>  
+    <p><%= value %></p>  
+    <% end %>  
+<% end %>

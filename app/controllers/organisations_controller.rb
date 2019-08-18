@@ -13,17 +13,25 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.new(organisation_params)
     @organisation.save
     
-    # needs to redirect to the currently signed in user TODO
-    redirect_to @user
+    redirect_to users_url
   end
 
   def update
     @organisation = Organisation.find(params[:id])
  
     if @organisation.update(organisation_params)
-      render template: 'users/show'
+      redirect_to users_url
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    @organisation = Organisation.find(params[:id])
+    @organisation.delete
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'Organisation was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
