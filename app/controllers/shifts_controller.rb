@@ -28,22 +28,31 @@ class ShiftsController < ApplicationController
   end
 
   def create
-    @shift = Shift.new
+    @shift = Shift.new()
+    # validate time is correct
+    if params[:finish_time] < params[:start_time]
+      @shift.errors.add :base, "Finish time must be after start time"
+    end
+
+    
     # shiftObject = ShiftObject.new
     @shift.user_id = current_user.id
 
-    start_dateTime = DateTime.parse("%s%s" % [ params[:shift_date].to_datetime() , params[:start_time].to_datetime()   ] ).strftime("%F %T")
+    start_dateTime = DateTime.parse("%s%s" % [ params[:shift_date].to_datetime() , params[:start_time].to_datetime()]).strftime("%F %T")
 
     @shift.start = start_dateTime
 
-    finish_dateTime = DateTime.parse("%s%s" % [ params[:shift_date].to_datetime() , params[:finish_time].to_datetime()   ] ).strftime("%F %T")
+    finish_dateTime = DateTime.parse("%s%s" % [ params[:shift_date].to_datetime() , params[:finish_time].to_datetime()]).strftime("%F %T")
 
     @shift.finish = finish_dateTime
 
     @shift.break_length = params[:break_length]
 
-    @shift.save
-    redirect_to action: "index", organisation_id: params[:organisation_id]
+    if @shift.errors == nil && @shift.save
+      redirect_to action: "index", organisation_id: params[:organisation_id]
+    else
+      redirect_to request.referrer, notice: @shift.errors.full_messages || root_url
+    end
   end
 
    # Never trust parameters from the scary internet, only allow the white list through.

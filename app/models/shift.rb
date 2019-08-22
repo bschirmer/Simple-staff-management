@@ -1,7 +1,7 @@
 class Shift < ApplicationRecord
     belongs_to :user
     validates :start, presence: true
-    validates_numericality_of :finish, presence: true, :greater_than => :start
+    validates :finish, presence: true
     validates :break_length, presence: true, numericality: { only_integer: true }
 
 end
