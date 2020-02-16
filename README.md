@@ -1,11 +1,14 @@
-# Brendan Schirmer backend tech test
+# Simple Staff login using Ruby on Rails
+This is a simple staff login app using Ruby on Rails. It was written to explore Ruby on Rails as I haven't touched it before. I have used Laravel for web development and Ruby on Rails seemed similar so I tried this simple app.
 
-Im going to go ahead and assume you know how to run this, but I will give a brief overview fo what I achieved.
+## How to run
+NOTE: you will need rails installed to run this
+Clone the repo
+Navigate to the repo in terminal
+run `rails db:migrate` to set up the database
+run `rails server` to start the server
+Navigate to `localhost:3000` in your browser
+From here you can add a new user and play around
 
-I was able to implement all of the needed screens. I added editing user details from optional extras.
-
-As this is my first time touching Ruby on Rails, there is a few things I would like to point out. 
-- Total time spent on this test would be around 20 hours if you take learning Ruby on Rail into consideration. Actual dev time would have been much shorter, but there are some real gotchas in there.
-- I used a bunch of tutorials and articles, so there is a bunch of generated code that I didn't delete because I didn't want to break all the things
-- I wanted to implement all of the optional extras, but I also have to do the front end test and I don't know react. I feel like I would be able to complete all of the optional extras given a bunch more time. 
-- I wanted to add unit tests, but again, I didn't want to spend an enormous amout of time on this. 
+## NOTE
+This is very simple and could use a lot of work. I wasn't really going for pretty, I was just dipping my toes in Ruby on Rails
